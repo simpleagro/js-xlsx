@@ -7921,7 +7921,8 @@ function write_ws_xml(idx, opts, wb) {
 //<selection pane="bottomRight" activeCell="A4" sqref="A4"/>
 
   var sheetView = writextag('sheetView', kids.join('') || undefined, {
-    showGridLines: opts.showGridLines == false ? '0' : '1',
+    //showGridLines: opts.showGridLines == false ? '0' : '1',
+    showGridLines: ws["!gridLines"] ? 0 : 1,
     tabSelected: opts.tabSelected === undefined ? '0' : opts.tabSelected,  // see issue #26, need to set WorkbookViews if this is set
     workbookViewId: opts.workbookViewId === undefined ? '0' : opts.workbookViewId
   });
